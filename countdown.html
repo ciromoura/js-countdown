@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="card" id="cardClock">
+            <div id="clock"></div>
+        </div>
+        <div class="card" style="margin-bottom: 0;">
+            <p id="text">Digite quantos minutos:</p>
+            <input id="time" type="number">
+            <button id="btsend" onclick="start()">
+                Iniciar
+            </button>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    document.getElementById('cardClock').style = "display: none;"
+
+    let startingMinutes = 25;
+    let time = startingMinutes * 60;
+    let countdownEl = document.getElementById('clock');
+    let check;
+
+    function start() {
+        startingMinutes = document.getElementById('time').value;
+        time = startingMinutes * 60;
+
+        document.getElementById('cardClock').style = "display: block;"
+        document.getElementById('time').value = '';
+
+        check = setInterval(updateCountdown, 1000);
+    }
+
+    function updateCountdown() {
+
+        if (time < 0) {
+            alert("Acabou!");
+            clearInterval(check);
+        } else {
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            countdownEl.innerHTML = `${minutes}:${seconds}`;
+            time--;
+        }
+    }
+
+
+</script>
+
+</html>

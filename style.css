@@ -1,61 +1,138 @@
-html {
-    display: table;
-    margin: auto;
+html, body {
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    padding: 0;
 }
 
-body {
-    display: table-cell;
-    vertical-align: middle;
+#base{
+    height: 100%;
     background-color: #12192e;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;   
 }
-    
 
 
-#main{
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-image: linear-gradient(to right top, #941fff, #8a42ff, #8358ff, #7e69ff, #7c78ff, #4992ff, #00a6ff, #00b7ff, #00d0ff, #00e6ec, #00f6ae, #23ff53);
+#principal{
+    width: 500px;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4%;
+}
+
+
+#relogio-base{
+    background-image: linear-gradient(to right top, #6a11cb, #2575fc);
     animation: animate 10s linear infinite;
+    box-shadow:
+    inset 0 0 15px #fff,      
+    inset 5px 0 20px #6a11cb, 
+    inset -5px 0 20px #2575fc,
+    inset 5px 0 80px #6a11cb, 
+    inset -5px 0 80px #2575fc,
+    0 0 15px #fff,
+    -2px 0 20px #6a11cb,        
+    2px 0 20px #2575fc;         
+    padding: 2%;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+#relogio{
+    opacity: 1;
+    background-color: #12192e;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#tempo{
+    position: relative;
+    top: 40%;
+}
+
+
+@media only screen and (max-width: 720px) {
+    #principal{
+        width: 360px;
+    }
+    #relogio-base{
+        height: 300px;
+        width: 300px;
+    }
+    #relogio{
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #principal{
+        width: 300px;
+    }
+    #relogio-base{
+        height: 260px;
+        width: 260px;
+    }
+    #relogio{
+        height: 260px;
+        width: 260px;
+    }
+}
+
 
 @keyframes animate {
-100%{
-  filter: hue-rotate(360deg);
-}
-}
-.card{
-    background: rgba(255,255,255,.85);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-#clock{
-    color: #12192e;
-    font-size: 4rem;
+    100%{
+      filter: hue-rotate(360deg);
+    }
 }
 
 
-#text{
-    margin-top: 0;
-    color: #12192e;
-    font-size: 1rem;
-}
-#time{
-    height: 2rem;
-    border-radius: 0.5rem;
-    border-color: #12192e;;
-    background-color: #e3e9fb;
-    font-size: 1rem;
-}
-#btsend{
-    height: 2rem;
-    border-radius: 0.5rem;
-    border-color: #12192e;
+#cartao{
     background-color: #12192e;
-    color: #FFF;
-    font-size: 1rem;
+    border-radius: 16px;
+    padding: 2%;
+    text-align: center;
+    margin-top: 8%;
 }
+
+
+#relogio{
+    color: #FFF;
+    font-size: 300%;
+}
+
+
+#texto{
+    margin-top: 0;
+    color: #fff;
+    font-size: 140%;
+}
+
+#entrada{
+    border-color: #fff;
+    outline: 0;
+    color: #fff;
+    background-color: #12192e;
+    border-width: 0 0 2px;
+    font-size: 140%;
+    width: 50%;
+}
+#enviar{
+    height: 1%;
+    border-radius: 8px;
+    border-color: #fff;
+    background-color: #12192e;
+    color: #fff;
+    font-size: 140%;
+}
+

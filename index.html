@@ -3,42 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS - Countdown</title>
+    <title>Countdown</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div id="main">
-        <div class="card" id="cardClock">
-            <div id="clock"></div>
-        </div>
-        <div class="card" style="margin-bottom: 0;">
-            <p id="text">Digite quantos minutos:</p>
-            <input id="time" type="number">
-            <button id="btsend" onclick="start()">
-                Iniciar
-            </button>
+    <div id="base">
+        <div id="principal">
+            <div id="relogio-base">
+                <div id="relogio">
+                    <div id="tempo">00:00</div>
+                </div>
+            </div>
+
+            <div id="cartao">
+                <p id="texto">Digite quantos minutos:</p>
+                <input id="entrada" type="number">
+                <button id="enviar" onclick="start()">
+                    Iniciar
+                </button>
+            </div>
+
         </div>
     </div>
+
 </body>
 
 <script>
 
-    document.getElementById('cardClock').style = "display: none;"
-
     let startingMinutes = 25;
     let time = startingMinutes * 60;
-    let countdownEl = document.getElementById('clock');
+    let countdownEl = document.getElementById('tempo');
     let check;
 
     function start() {
-        startingMinutes = document.getElementById('time').value;
+        startingMinutes = document.getElementById('entrada').value;
         time = startingMinutes * 60;
 
-        document.getElementById('cardClock').style = "display: block;"
-        document.getElementById('time').value = '';
+        document.getElementById('entrada').value = '';
 
         check = setInterval(updateCountdown, 1000);
     }
